@@ -1,6 +1,6 @@
 # Automation-Test
 
-# Test 1
+#Test 1
 describe('Automation Practice', ()=>{
     it('Search  with your name',()=>{
         cy.visit('http://automationpractice.com/index.php')
