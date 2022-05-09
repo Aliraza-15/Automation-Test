@@ -1,7 +1,8 @@
 # Automation-Test
 
 #Test 1
-describe('Automation Practice', ()=>{
+
+    describe('Automation Practice', ()=>{
     it('Search  with your name',()=>{
         cy.visit('http://automationpractice.com/index.php')
         cy.get('#search_query_top').type('hammad')
