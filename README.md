@@ -1,17 +1,41 @@
 # Automation-Test
 
-#Test 1
+#PageObject
 
+
+       class Search{
+       SearchName(){
+
+          return cy.get('#search_query_top')
+        } 
+       }
+        SearchClick(){
+
+          return cy.get('#searchbox > .btn').click()
+        } 
+       }
+       
+       export default Search
+
+   
+
+
+#Test-01
+   
+    import Search from '../pageObject/Search'
     describe('Automation Practice', ()=>{
+    
+    const Search = new Search()
+    
     it('Search  with your name',()=>{
         cy.visit('http://automationpractice.com/index.php')
-        cy.get('#search_query_top').type('hammad')
-        cy.get('#searchbox > .btn').click()
+        Search.SearchName().type('hammad')
+        Search.SearchClick.click()
         cy.url().should('contain', 'hammad')
         cy.get('.alert.alert-warning').should('contain.text','No results were found for your search hammad')
     })
 
-#Test 2
+#Test-02
 
     it('Check number of length of dresses',()=>{
         cy.visit('http://automationpractice.com/index.php')
@@ -25,7 +49,7 @@
         
     })
 
-#Test 3
+#Test-03
 
     it('Add any Product cart and verify',()=>{
         cy.visit('http://automationpractice.com/index.php')
