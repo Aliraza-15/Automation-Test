@@ -29,10 +29,10 @@
     
     it('Search  with your name',()=>{
         cy.visit('http://automationpractice.com/index.php')
-        Search.SearchName().type('hammad')
+        Search.SearchName().type('Aliraza')
         Search.SearchClick.click()
         cy.url().should('contain', 'hammad')
-        cy.get('.alert.alert-warning').should('contain.text','No results were found for your search hammad')
+        cy.get('.alert.alert-warning').should('contain.text','No results were found for your search Aliraza')
     })
 
 #Test-02
